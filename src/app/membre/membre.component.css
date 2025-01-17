@@ -1,4 +1,206 @@
-
-.mat-elevation-z8{
-    width: 1200px;
+/* Container Styles */
+.mat-elevation-z8 {
+    width: 100%;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
+
+/* Header Section */
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+}
+
+/* Add Employee Button */
+.btn-outline-primary {
+    background-color: #3f51b5;
+    color: white;
+    padding: 0.5rem 1.25rem;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+    margin: 0 !important;
+}
+
+.btn-outline-primary:hover {
+    background-color: #303f9f;
+}
+
+/* Improved Filter Select */
+.filter-select {
+    min-width: 400px;
+    margin: 0 !important;
+}
+
+::ng-deep .filter-select .mat-form-field-wrapper {
+    padding-bottom: 0;
+    margin: 0;
+}
+
+::ng-deep .filter-select .mat-form-field-flex {
+    padding: 0.5rem 0.75rem !important;
+    background-color: #e2e8f0!important;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px !important;
+}
+
+::ng-deep .filter-select .mat-form-field-underline {
+    display: none;
+}
+
+::ng-deep .filter-select .mat-form-field-infix {
+    padding: 0.5rem 0 !important;
+    border-top: 0;
+}
+
+::ng-deep .filter-select .mat-select-arrow-wrapper {
+    transform: translateY(0);
+}
+
+/* Search Input */
+.form-control {
+    flex: 1;
+    min-width: 400px;
+    padding: 0.75rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    height: 42px;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #3f51b5;
+    box-shadow: 0 0 0 2px rgba(63, 81, 181, 0.2);
+}
+
+/* Table Styles */
+.mat-table {
+    width: 100%;
+    background: white;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 0;
+}
+
+/* Improved Paginator Styles */
+::ng-deep .mat-paginator {
+    background: white;
+    border-top: 1px solid #e2e8f0;
+    margin-top: 0;
+}
+
+::ng-deep .mat-paginator-container {
+    min-height: 48px;
+    padding: 0 1rem !important;
+    justify-content: space-between;
+}
+
+::ng-deep .mat-paginator-page-size {
+    align-items: center;
+    height: 48px;
+}
+
+::ng-deep .mat-paginator-page-size-select {
+    margin: 0 4px 0 8px !important;
+    width: 56px !important;
+}
+
+::ng-deep .mat-paginator-range-label {
+    margin: 0 24px;
+}
+
+::ng-deep .mat-paginator-navigation-previous,
+::ng-deep .mat-paginator-navigation-next,
+::ng-deep .mat-paginator-navigation-first,
+::ng-deep .mat-paginator-navigation-last {
+    margin: 8px !important;
+}
+
+/* Other existing styles remain the same */
+.mat-header-cell {
+    background-color: #f8fafc;
+    color: #475569;
+    font-weight: 600;
+    padding: 1rem;
+    font-size: 0.95rem;
+}
+
+.mat-cell {
+    padding: 1rem;
+    color: #1e293b;
+    font-size: 0.95rem;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.mat-row:hover {
+    background-color: #f8fafc;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .mat-elevation-z8 {
+        padding: 1rem;
+        margin: 1rem;
+    }
+    
+    .header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .btn-outline-primary {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .filter-select {
+        background-color: #e2e8f0;
+        width: 200%;
+    }
+
+    ::ng-deep .mat-paginator-container {
+        flex-wrap: wrap;
+        padding: 8px !important;
+    }
+    
+    ::ng-deep .mat-paginator-page-size {
+        margin-right: 0;
+    }
+    
+    ::ng-deep .mat-paginator-range-label {
+        margin: 8px 0;
+    }
+    
+    .mat-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
+
+#searchbutton {
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+
+  .employee-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .filter-select {
+    margin-left: 10px;
+    width: 150px;
+  }

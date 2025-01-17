@@ -1,39 +1,29 @@
-<style>
-  #searchbutton {
-    margin-left: 10px;
-    margin-top: 10px;
-    margin-bottom: 20px;
-  }
-
-  .employee-image {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
-  }
-
-  .filter-select {
-    margin-left: 10px;
-    width: 150px;
-  }
-</style>
 
 <div class="mat-elevation-z8">
   <div class="header">
     <a mat-raised-button class="btn btn-outline-primary btn-lg" (click)="Openpopup('')" style="margin: 2%">Add Employee</a>
     
     <!-- Filter by Column Dropdown -->
-    <mat-form-field appearance="fill" class="filter-select">
+    <mat-form-field class="filter-select">
       <mat-label>Filter by Column</mat-label>
-      <mat-select [(ngModel)]="selectedColumn" (selectionChange)="applyColumnFilter()">
-        <mat-option value="all">Show All Columns</mat-option>
-        <mat-option *ngFor="let column of filterableColumns" [value]="column">
+      <mat-select
+        class="mat-select"
+        [(ngModel)]="selectedColumn"
+        (selectionChange)="applyColumnFilter()"
+      >
+        <mat-option 
+         style="background-color:whitesmoke !important ;"
+        value="all">Show All Columns</mat-option>
+        <mat-option
+        style="background-color:whitesmoke !important ;"
+          *ngFor="let column of filterableColumns"
+          [value]="column"
+        >
           {{ column }}
         </mat-option>
       </mat-select>
       <mat-icon matSuffix>filter_list</mat-icon>
     </mat-form-field>
-
     <!-- Search Bar -->
     <input class="form-control me-2" type="text" [(ngModel)]="searchTerm" placeholder="Search" (input)="applySearch()">
   </div>
@@ -106,7 +96,9 @@
       <th mat-header-cell *matHeaderCellDef> Action</th>
       <td mat-cell *matCellDef="let element">
         <div>
-          <a mat-raised-button (click)="RemoveEmployee(element.id)" color="accent">Delete</a>
+          <a mat-raised-button (click)="RemoveEmployee(element.id)" color="accent">
+            <img src="assets/delete.png" alt="Delete" width="40" height="40">
+          </a>
         </div>
       </td>
     </ng-container>
@@ -115,6 +107,6 @@
     <tr mat-row *matRowDef="let row; columns: visibleColumns;"></tr>
   </table>
 
-  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Select page of employees">
+  <mat-paginator [pageSizeOptions]="[10, 20,30,50]" showFirstLastButtons aria-label="Select page of employees">
   </mat-paginator>
 </div>
